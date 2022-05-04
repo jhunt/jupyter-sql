@@ -2,11 +2,7 @@ FROM jupyter/minimal-notebook
 
 USER root
 RUN apt-get update \
- && apt-get install -y postgresql
-RUN apt-get install -y libpq-dev
-RUN apt-get install -y build-essential
+ && apt-get install -y postgresql libpq-dev build-essential
 
 USER jovyan
-RUN pip install ipython-sql
-RUN pip install sqlalchemy
-RUN pip install psycopg2
+RUN pip install ipython-sql sqlalchemy psycopg2 pandas
