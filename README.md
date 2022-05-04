@@ -1,4 +1,4 @@
-~/code/jupe
+jupyter-sql
 ===========
 
 A quick foray into running SQL Jupyter notebooks for exploring data.
