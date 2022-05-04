@@ -5,6 +5,8 @@ services:
     ports: [8888:8888]
     environment:
       - JUPYTER_TOKEN=data
+    volumes:
+      - ./_/jupyter:/home/jovyan
 
   db:
     image: postgres
@@ -12,6 +14,6 @@ services:
       - POSTGRES_USER=jupe
       - POSTGRES_PASSWORD=sekrit
     volumes:
-      - ./data/in:/data/in:ro
-      - ./data/out:/data/out
+      - ./_/jupyter/data:/data/in:ro
+      - ./_/jupyter/data:/data/out
       - ./_/pg:/var/lib/postgresql/data
